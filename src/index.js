@@ -58,7 +58,7 @@ class QueueServer {
     }
     onClose = (server) => () => {
         console.error(`[AMQP-${server.name}] connection closed.`);
-        return setTimeout(server.connect, 1000);
+        return setTimeout(server.start, 1000);
     }
 
     // A worker that acks messages only if processed successfully
